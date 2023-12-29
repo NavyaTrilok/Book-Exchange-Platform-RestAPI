@@ -1,0 +1,78 @@
+@token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTgyY2UzZmY3NTY3M2I0NzZhZDI5OCIsImlhdCI6MTcwMDMzNjEwNCwiZXhwIjoxNzAxMjAwMTA0fQ.2abqvbLMrloSMPHddaxp-Cb78Aiv2akWG-OtpW3pZ1A"
+@baseUrl = http://localhost:3000
+
+###
+
+GET {{baseUrl}}/books
+Authorization: Bearer {{token}}
+# In this example, @token is a custom variable that holds your actual token. Replace your_actual_token_here with the token you have.
+###
+
+
+POST {{baseUrl}}/books
+Content-Type: application/json
+Cookie: jwt={{token}}
+
+{
+    "title": "Think Like a Programmer",
+    "author": "JV. Anton Spraul",
+    "description":"The real challenge of programming isn't learning a language's syntax—it's learning to creatively solve problems so you can build something great.",
+    "exchangeType":"borrow",
+    "owner":"UmaTrilokDubaka",
+    "status":"available"
+}
+
+###
+
+
+POST http://localhost:3000/books
+Content-Type: application/json
+Cookie: jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTgyY2UzZmY3NTY3M2I0NzZhZDI5OCIsImlhdCI6MTcwMDI4OTg0OCwiZXhwIjoxNzAxMTUzODQ4fQ.1o6UgFbbxVpduiqgmKL_LVNLlIWTij8d03x9iyCeWgA
+
+{
+    "title": "Programming Ruby",
+    "author": "J. R. R. Tolkien",
+    "description":"Ruby is an increasingly popular, fully object-oriented dynamic programming language, hailed by many practitioners as the finest and most useful language available today.",
+    "exchangeType":"borrow",
+    "owner":"NavyaTrilokDubaka",
+    "status":"available"
+}
+
+### Sample Test: Retrieve all books
+
+GET http://localhost:3000/books
+Cookie: jwt={{token}}
+
+#5. GET Request: Fetch Specific Book by ID:
+### Sample Test: Fetch book by ID
+GET {{baseUrl}}/books/65582fbc64dadb141cb01377 HTTP/1.1
+Cookie: jwt={{token}}
+
+### Sample Test: Modify a book by ID
+PUT http://localhost:3000/books/65582fbc64dadb141cb01377 HTTP/1.1
+Content-Type: application/json
+Cookie: jwt={{token}}
+
+{ 
+    "title": "Updated Book Title: UNIX Programming", 
+    "author": "Updated Author Name: Eric Altice" 
+}
+
+###
+
+POST {{baseUrl}}/books
+Content-Type: application/json
+Cookie: jwt={{token}}
+
+{
+    "title": "Genetic programming",
+    "author": "John Koza",
+    "description":"In this ground-breaking book, John Koza shows how this remarkable paradigm works and provides substantial empirical evidence that solutions to a great variety of problems",
+    "exchangeType":"borrow",
+    "owner":"UmaTrilokDubaka",
+    "status":"unavailable"
+}
+
+### Sample Test: Delete book by ID
+DELETE http://localhost:3000/books/655830f464dadb141cb01393 HTTP/1.1
+Cookie: jwt={{token}}
