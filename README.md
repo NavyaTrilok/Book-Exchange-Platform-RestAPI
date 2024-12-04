@@ -1,4 +1,5 @@
 **Problem Statement**
+
 In today's digital age, people have access to a wide variety of books through libraries and online stores. However, the cost of buying new books or the environmental impact of mass production can be a barrier for many readers. There is a growing need for a platform that enables users to exchange books in a community-driven way, promoting both sustainability and cost-efficiency.
 
 A Book Exchange Platform allows users to list their books for trade, request books they want, and exchange books within a community. This platform will be a web-based application that enables users to:
@@ -9,6 +10,7 @@ Search for available books and request a book they need.
 Manage book exchange requests.
 
 **Solution Overview**
+
 The Book Exchange Platform will be built as a RESTful API using Node.js and Express. The backend will handle user registration, book listing, search, and the management of book exchange requests.
 
 Here's an outline of the key features of the solution:
