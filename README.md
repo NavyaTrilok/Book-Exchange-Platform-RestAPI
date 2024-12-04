@@ -9,7 +9,7 @@ List books they want to exchange.
 Search for available books and request a book they need.
 Manage book exchange requests.
 
-**Solution Overview**
+**Solution**
 
 The Book Exchange Platform will be built as a RESTful API using Node.js and Express. The backend will handle user registration, book listing, search, and the management of book exchange requests.
 
