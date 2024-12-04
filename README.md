@@ -27,7 +27,8 @@ When a book is requested, a pending exchange request will be created.
 
 Book Availability Management:
 Once the exchange is completed, users can mark the book as exchanged, removing it from the list.
-Solution Architecture
+
+**Solution Architecture**
 
 Database:
 MongoDB (NoSQL) to store user and book data.
